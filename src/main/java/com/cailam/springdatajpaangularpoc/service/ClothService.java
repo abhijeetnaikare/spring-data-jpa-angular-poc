@@ -10,7 +10,7 @@ public interface ClothService {
 
     Cloth findByName(String name);
 
-    void saveCloth(Cloth cloth);
+    Cloth saveCloth(Cloth cloth);
 
     void updateCloth(Cloth cloth);
 

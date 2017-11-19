@@ -28,8 +28,8 @@ public class ClothServiceImpl implements  ClothService{
     }
 
     @Override
-    public void saveCloth(Cloth cloth) {
-        clothRepository.save(cloth);
+    public Cloth saveCloth(Cloth cloth) {
+        return  clothRepository.save(cloth);
     }
 
     @Override

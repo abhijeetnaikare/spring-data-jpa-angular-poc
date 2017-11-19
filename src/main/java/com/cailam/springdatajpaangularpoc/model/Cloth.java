@@ -9,8 +9,10 @@ import java.io.Serializable;
 @Table(name="CLOTH")
 public class Cloth implements Serializable{
 
+    private static final long serialVersionUID = -3009157732242241606L;
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     @NotEmpty
@@ -23,6 +25,16 @@ public class Cloth implements Serializable{
 
     @Column(name="COST", nullable=false)
     private double cost;
+
+    protected Cloth(){
+
+    }
+
+    public Cloth( String name, String type, double cost) {
+        this.name = name;
+        this.type = type;
+        this.cost = cost;
+    }
 
     public Long getId() {
         return id;
@@ -54,5 +66,15 @@ public class Cloth implements Serializable{
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return "Cloth{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }
